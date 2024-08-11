@@ -2,7 +2,7 @@
 
 /* Navbar container */
 .navbar {
-  background-color: #333;
+  background-color: skyblue;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +12,7 @@
 
 /* Navbar container */
 .navbar-container {
+  background-color: skyblue;
   display: flex;
   align-items: center;
   width: 100%;
@@ -102,7 +103,13 @@
 
 
 
-
+.footer{
+  position: absolute;
+  bottom: 0;
+  background-color: skyblue;
+  width: 100%;
+  text-align: center;
+  }
 
 .nav-links:hover {
   color: #f39c12;

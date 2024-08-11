@@ -1,0 +1,23 @@
+/* src/components/SocialIcons.css */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adjust spacing between icons */
+    padding: 20px; /* Adjust padding around the icons */
+}
+
+.social-icon {
+    font-size: 2rem; /* Adjust icon size */
+    color: #333; /* Adjust color */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.social-icon:hover {
+    color: #007bff; /* Change color on hover (example: blue) */
+}
+
+@media (max-width: 768px) {
+    .social-icon {
+        font-size: 1.5rem; /* Adjust size for smaller screens */
+    }
+}

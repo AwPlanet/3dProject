@@ -1,9 +1,12 @@
+// src/App.js
 import './App.css';
-import Nav from './Nav';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'; // No need for Router import
+import Nav from './Nav.js';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
+// import SocialIcons from './socialicons.js';
 
 function App() {
-    return (
+    return ( 
         <div className="App">
             <BrowserRouter>
                 <Nav />
@@ -15,6 +18,7 @@ function App() {
                     <Route path="/profile" element={<h1>Profile Product Component</h1>} />
                 </Routes>
             </BrowserRouter>
+            <Footer />
         </div>
     );
 }
