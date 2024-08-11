@@ -3,7 +3,7 @@ import './App.css';
 import Nav from './Nav.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-// import SocialIcons from './socialicons.js';
+
 
 function App() {
     return ( 
