@@ -98,11 +98,6 @@
 
 
 
-
-
-
-
-
 .footer{
   position: absolute;
   bottom: 0;
@@ -110,6 +105,69 @@
   width: 100%;
   text-align: center;
   }
+
+/* _____________________________________________________________ */
+/* Sign Up Component */
+.register{
+  /* margin: 30%; */
+  }
+
+.inputBox{
+  padding: 7px;
+  display: block;
+  border: 1px solid skyblue;
+  width: 300px;
+  margin: 20px;
+}
+
+.appButton{
+  margin: 20px;
+  width: 150px;
+  padding: 10px;
+  background-color: skyblue;
+  border: solid 1px;
+  cursor: pointer;
+}
+
+/* _____________________________________________________________ */
+
+
+
+/* _____________________________________________________________ */
+/* Social Icon component */
+
+.social-icons {
+  display: flex;
+  flex-direction: row; /* Align icons in a row */
+  justify-content: center; /* Center icons horizontally */
+  align-items: center; /* Center icons vertically if needed */
+  gap: 15px; /* Spacing between icons */
+  padding: 5px 5px 1px; /* Top padding of 5px, left/right padding of 15px, bottom padding of 20px */
+  font-size: 2rem; /* Icon size */
+  color: #333; /* Default color */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-icons i:hover {
+  color: blue; /* Change icon color to blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-icons {
+      font-size: 1.5rem; /* Adjust size for smaller screens */
+  }
+}
+/* _____________________________________________________________ */
+
+
+
+
+
+
+
+
+
 
 .nav-links:hover {
   color: #f39c12;

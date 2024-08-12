@@ -9,7 +9,10 @@ const Footer = () => {
             
             <SocialIcons>
             </SocialIcons>
-            <h3>3DCraftZone</h3>
+            <h3>
+                3DCraftZone
+            </h3>
+           
         </div>
     );
 };

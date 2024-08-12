@@ -33,6 +33,9 @@ const Nav = () => {
                     <li className="nav-item">
                         <Link to="/profile" className="nav-links" onClick={() => setIsOpen(false)}>Profile</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="/signup" className="nav-links" onClick={() => setIsOpen(false)}>Sign Up</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
