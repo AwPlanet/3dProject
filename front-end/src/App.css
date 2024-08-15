@@ -58,6 +58,7 @@
   color: #f39c12;
 }
 
+
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .menu-icon {
@@ -95,9 +96,6 @@
 
 
 
-
-
-
 .footer{
   position: absolute;
   bottom: 0;
@@ -106,10 +104,14 @@
   text-align: center;
   }
 
+
+
+
 /* _____________________________________________________________ */
 /* Sign Up Component */
 .register{
-  /* margin: 30%; */
+  display: block; 
+  text-align: center;
   }
 
 .inputBox{
@@ -119,23 +121,23 @@
   width: 300px;
   margin: 20px;
 }
-
 .appButton{
   margin: 20px;
   width: 150px;
   padding: 10px;
   background-color: skyblue;
   border: solid 1px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
-
 /* _____________________________________________________________ */
+
+
+
 
 
 
 /* _____________________________________________________________ */
 /* Social Icon component */
-
 .social-icons {
   display: flex;
   flex-direction: row; /* Align icons in a row */
