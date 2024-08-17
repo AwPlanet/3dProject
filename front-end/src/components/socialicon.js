@@ -2,18 +2,20 @@ import React from 'react';
 import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
 import '../App.css'
 
-const SocialIcons = () => (
-  <div className='social-icons'>
-    <a  href="https://x.com" target="_blank" rel="noopener noreferrer">
-      <FaTwitter size={20} />
-    </a>
-    <a  href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-      <FaFacebook size={20} />
-    </a>
-    <a  href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-      <FaInstagram size={20} />
-    </a>
-  </div>
-);
+const SocialIcons = () => {
+    return (
+        <div className="social-icons mb-2">
+            <a href="https://facebook.com" className="text-white mx-2" aria-label="Facebook">
+                <FaFacebook />
+            </a>
+            <a href="https://twitter.com" className="text-white mx-2" aria-label="Twitter">
+                <FaTwitter />
+            </a>
+            <a href="https://instagram.com" className="text-white mx-2" aria-label="Instagram">
+                <FaInstagram />
+            </a>
+        </div>
+    );
+};
 
 export default SocialIcons;

@@ -1,19 +1,16 @@
 import React from 'react';
-import '../App.css'; // Ensure you have a CSS file for Footer
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap is imported
+import '../App.css'; // Ensure your custom styles come after Bootstrap
 import SocialIcons from './socialicon.js';
 
 const Footer = () => {
     return (
- 
-        <div className="footer">
-            
-            <SocialIcons>
-            </SocialIcons>
-            <h3>
-                3DCraftZone
-            </h3>
-           
-        </div>
+        <footer className="bg-primary text-white text-center py-3">
+            <div className="container">
+                <SocialIcons />
+                <h3 className="mt-2">3DCraftZone</h3>
+            </div>
+        </footer>
     );
 };
 

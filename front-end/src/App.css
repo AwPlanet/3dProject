@@ -1,109 +1,37 @@
-/* Nav.css */
-
-/* Navbar container */
+/* Custom CSS for Navbar */
+/* _____________________________________________________________ */
 .navbar {
-  background-color: skyblue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  position: relative;
+  margin-bottom: 20px;
 }
 
-/* Navbar container */
-.navbar-container {
-  background-color: skyblue;
-  display: flex;
-  align-items: center;
-  width: 100%;
+.navbar-brand {
+  font-weight: bold;
 }
 
-/* Menu icon */
-.menu-icon {
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  cursor: pointer;
-  padding: 5px;
+.navbar-nav .nav-link {
+  color: white !important;
 }
 
-.menu-dot {
-  background-color: #fff;
-  width: 25px;
-  height: 3px;
-  margin: 3px 0;
-  border-radius: 3px;
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa !important;
 }
-
-/* Navbar menu */
-.nav-menu {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-/* Navbar item */
-.nav-item {
-  margin: 0 10px;
-}
-
-/* Navbar link */
-.nav-links {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.nav-links:hover {
-  color: #f39c12;
-}
-
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-  .menu-icon {
-      display: flex; /* Show hamburger menu icon on small screens */
-  }
-
-  .nav-menu {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #333;
-      width: 250px; /* Adjust width as needed */
-      height: 100vh; /* Full height */
-      transform: translateX(-100%); /* Hide by default */
-      transition: transform 0.3s ease-in-out;
-      padding: 20px;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-  }
-
-  .nav-menu.active {
-      transform: translateX(0); /* Slide in when active */
-  }
-
-  .nav-item {
-      margin: 20px 0;
-      text-align: left; /* Align text to the left */
-  }
-
-  .nav-links {
-      font-size: 22px; /* Adjust font size for readability on small screens */
-  }
-}
+/* _____________________________________________________________ */
 
 
 
-.footer{
+
+/* _____________________________________________________________ */
+/* Custom CSS for Footer */
+footer {
   position: absolute;
   bottom: 0;
-  background-color: skyblue;
   width: 100%;
-  text-align: center;
-  }
+}
 
+footer h3 {
+  margin: 0;
+}
+/* _____________________________________________________________ */
 
 
 

@@ -1,40 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './App.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import './App.css'; // Ensure your custom styles come after Bootstrap
 
 const Nav = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    const auth = localStorage.getItem('user');
 
     return (
-        <nav className="navbar">
-            <div className="navbar-container">
-                <div className="menu-icon" onClick={toggleMenu}>
-                    <div className="menu-dot"></div>    
-                    <div className="menu-dot"></div>
-                    <div className="menu-dot"></div>
-                </div>
-                <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a className="navbar-brand" href="/">3DCraftZoneLOGO</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link to="/" className="nav-links" onClick={() => setIsOpen(false)}>Product</Link>
+                        <Link className="nav-link" to="/">Product</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/add" className="nav-links" onClick={() => setIsOpen(false)}>Add Product</Link>
+                        <Link className="nav-link" to="/add">Add Product</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/update" className="nav-links" onClick={() => setIsOpen(false)}>Update Product</Link>
+                        <Link className="nav-link" to="/update">Update Product</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/logout" className="nav-links" onClick={() => setIsOpen(false)}>Logout</Link>
+                        <Link className="nav-link" to="/profile">Profile</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/profile" className="nav-links" onClick={() => setIsOpen(false)}>Profile</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/signup" className="nav-links" onClick={() => setIsOpen(false)}>Sign Up</Link>
+                        {auth ? 
+                            <Link className="nav-link" to="/logout">Logout</Link> : 
+                            <Link className="nav-link" to="/signup">Sign Up</Link>
+                        }
                     </li>
                 </ul>
             </div>
