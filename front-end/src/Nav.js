@@ -29,7 +29,7 @@ const Nav = () => {
                     <li className="nav-item">
                         {auth ? 
                             <Link className="nav-link" to="/logout">Logout</Link> : 
-                            <Link className="nav-link" to="/signup">Sign Up</Link>
+                            <Link className="nav-link" to="/signin">Sign Up</Link>
                         }
                     </li>
                 </ul>

@@ -7,11 +7,27 @@ app.use(express.json());
 app.use(cors());
 
 
-app.post("/register", async (req, resp)=>{
-    let user = new User(req.body)
-    let result = await user.save();
-    resp.send(result)
-})
+app.get("/users", async (req, resp) => {
+    try {
+        let users = await User.find(); 
+        resp.send(users);
+    } catch (error) {
+        resp.status(500).send({ message: "Error fetching users" });
+    }
+});
+
+app.post("/login", async (req, resp) => {
+    const { email, password } = req.body;
+    let user = await User.findOne({ email, password });
+    
+    if (user) {
+        // Add some kind of authentication token in production
+        resp.send({ auth: true, user });
+    } else {
+        resp.send({ auth: false, message: "Invalid credentials" });
+    }
+});
+
 
 
 app.listen(5000);
