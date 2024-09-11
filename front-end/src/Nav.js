@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './App.css'; // Ensure your custom styles come after Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import './App.css'; 
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
     const auth = localStorage.getItem('user');
+    const navigate = useNavigate();
+    const logout = () => {
+        localStorage.removeItem('user');
+        navigate('/signin');
+    };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -28,8 +34,8 @@ const Nav = () => {
                     </li>
                     <li className="nav-item">
                         {auth ? 
-                            <Link className="nav-link" to="/logout">Logout</Link> : 
-                            <Link className="nav-link" to="/signin">Sign Up</Link>
+                            <span className="nav-link" onClick={logout} style={{ cursor: 'pointer' }}>Logout</span> : 
+                            <Link className="nav-link" to="/signup">Sign Up</Link>
                         }
                     </li>
                 </ul>

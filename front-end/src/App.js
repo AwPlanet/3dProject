@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import SignIn from './components/SignIn.js';
 import PrivateComponent from './components/PrivateComponent.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import SignUp from './components/Signup.js';
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 
@@ -19,10 +20,10 @@ function App() {
                     <Route path="/" element={<h1>Product Component</h1>} />
                     <Route path="/add" element={<h1>Add Product Component</h1>} />
                     <Route path="/update" element={<h1>Update Product Component</h1>} />
-                    <Route path="/logout" element={<h1>Logout Product Component</h1>} />
                     <Route path="/profile" element={<h1>Profile Product Component</h1>} />
                     </Route>
-                    <Route path="/signin" element={<SignIn />} />    
+                    <Route path="/signin" element={<SignIn />} />   
+                    <Route path="/signup" element={<SignUp />} />     
                 </Routes>
             </BrowserRouter>
             <Footer />
