@@ -7,7 +7,37 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
+    const isValidEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    const isValidName = (name) => {
+        const nameRegex = /^[A-Za-z\s]+$/;
+        return nameRegex.test(name);
+    }
+
+    const isValidPassword = (password) => {
+        const passwordRegex = /^.{8,}$/; 
+        return passwordRegex.test(password);
+    }
+
     const collectData = async () => {
+        if (!isValidName(name)) {
+            alert("Name should only contain alphabetic characters.");
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        if(!isValidPassword(password)){
+            alert("Please make sure your password contains 8 min charachters")
+            return;
+        }
+
         console.log(name, email, password);
 
         let result = await fetch("http://localhost:5000/register", {
