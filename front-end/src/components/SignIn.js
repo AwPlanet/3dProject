@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, navigate } from 'react-router-dom';
 
 const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    // Check if the user is already authenticated
     useEffect(() => {
         const auth = localStorage.getItem('user');
         if (auth) {
@@ -17,7 +16,6 @@ const SignIn = () => {
     const collectData = async () => {
         console.warn(email, password);
 
-        // Send request to the backend to log in
         let result = await fetch("http://localhost:5000/login", {
             method: 'post',
             body: JSON.stringify({ email, password }),
@@ -30,7 +28,6 @@ const SignIn = () => {
         console.warn(result);
 
         if (result.auth) {
-            // Save user data to localStorage if login is successful
             localStorage.setItem("user", JSON.stringify(result.user));
             navigate('/');
         } else {
@@ -40,7 +37,7 @@ const SignIn = () => {
 
     return (
         <div className="login">
-            <h1>Sign In</h1>
+            <h1>התחבר</h1>
             
             <input
                 className="inputBox"
@@ -58,7 +55,7 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             
-            <button onClick={collectData} className="appButton" type="button">Sign In</button>
+            <button onClick={collectData} className="appButton" type="button">התחבר</button>
         </div>
     );
 }

@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="bg-primary text-white text-center py-3">
             <div className="container">
                 <SocialIcons />
-                <h3 className="mt-2">3DCraftZone</h3>
+                <h3 className="mt-2">(: הכל בסיטונאות :)</h3>
             </div>
         </footer>
     );

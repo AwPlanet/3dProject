@@ -11,36 +11,36 @@ const Nav = () => {
         localStorage.removeItem('user');
         navigate('/signin');
     };
+    const parsedname = JSON.parse(auth);
+
+
 
     return (
+        <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a className="navbar-brand" href="/">3DCraftZoneLOGO</a>
+            <a className="navbar-brand" href="/">(: הכל בסיטונאות :)</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Product</Link>
+                        <Link className="nav-link" to="/">מוצרים</Link>
                     </li>
+                    {auth ? 
                     <li className="nav-item">
-                        <Link className="nav-link" to="/add">Add Product</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/update">Update Product</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/profile">Profile</Link>
-                    </li>
-                    <li className="nav-item">
+                        <Link className="nav-link" to="/userdata">{parsedname.name} פרטי המשתמש של</Link>
+                    </li> : ''}
+                    <li className="nav-item" id='logout'>
                         {auth ? 
-                            <span className="nav-link" onClick={logout} style={{ cursor: 'pointer' }}>Logout</span> : 
-                            <Link className="nav-link" to="/signup">Sign Up</Link>
+                            <span className="nav-link" onClick={logout} style={{ cursor: 'pointer' }}>התנתק</span> : 
+                            <Link className="nav-link" to="/signup">הירשם</Link>
                         }
                     </li>
                 </ul>
             </div>
         </nav>
+        </header>
     );
 };
 
