@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css'; 
 import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import './App.css'; 
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
     const auth = localStorage.getItem('user');
@@ -14,8 +17,17 @@ const Nav = () => {
     const parsedname = JSON.parse(auth);
 
 
+    const navigate = useNavigate();
+    const logout = () => {
+        localStorage.removeItem('user');
+        navigate('/signin');
+    };
+    const parsedname = JSON.parse(auth);
+
+
 
     return (
+        <header>
         <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <img src="/LOGO.png" alt="Logo" style={{height:'3rem', mixBlendMode:'color-dodge'}}/>
@@ -25,8 +37,9 @@ const Nav = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Product</Link>
+                        <Link className="nav-link" to="/">מוצרים</Link>
                     </li>
+                    {auth ? 
                     {auth ? 
                     <li className="nav-item">
                         <Link className="nav-link" to="/userdata">{parsedname.name} User</Link>
@@ -40,6 +53,7 @@ const Nav = () => {
                 </ul>
             </div>
         </nav>
+        </header>
         </header>
     );
 };
