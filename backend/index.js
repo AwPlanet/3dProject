@@ -8,16 +8,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
-app.get("/users", async (req, resp) => {
-    try {
-        let users = await User.find(); 
-        resp.send(users);
-    } catch (error) {
-        resp.status(500).send({ message: "Error fetching users" });
-    }
-});
-
 app.put('/messages/:id', async (req, res) => {
     const { id } = req.params;
     const { status } = req.body;

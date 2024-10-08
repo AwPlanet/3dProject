@@ -1,28 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const navigate = useNavigate();
-
-    const isValidEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    const isValidName = (name) => {
-        const nameRegex = /^[A-Za-z\s]+$/;
-        return nameRegex.test(name);
-    }
-
-    const isValidPassword = (password) => {
-        const passwordRegex = /^.{8,}$/; 
-        return passwordRegex.test(password);
-    }
 const SignUp = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -65,12 +43,9 @@ const SignUp = () => {
             method: 'post',
             body: JSON.stringify({ name, email, password }),
             headers: {
-            body: JSON.stringify({ name, email, password }),
-            headers: {
                 'Content-Type': 'application/json'
             }
         });
-
 
         result = await result.json();
 
@@ -84,12 +59,12 @@ const SignUp = () => {
 
     return (
         <div className="signup">
-            <h1>הירשם</h1>
+            <h1>Sign Up</h1>
             
             <input
                 className="inputBox"
                 type="text"
-                placeholder="הכנס שם"
+                placeholder="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
@@ -97,7 +72,7 @@ const SignUp = () => {
             <input
                 className="inputBox"
                 type="text"
-                placeholder="הכנס אימייל"
+                placeholder="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
@@ -105,16 +80,14 @@ const SignUp = () => {
             <input
                 className="inputBox"
                 type="password"
-                placeholder="הכנס סיסמה"
+                placeholder="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
             
-            <button onClick={collectData} className="appButton" type="button">הירשם</button>
+            <button onClick={collectData} className="appButton" type="button">sign up</button>
         </div>
-    );
     );
 }
 
 export default SignUp;
-

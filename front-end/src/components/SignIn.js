@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
     const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ const SignIn = () => {
         if (auth) {
             navigate('/');
         }
-    }, []);
+    }, [navigate]);
 
     const collectData = async () => {
         console.warn(email, password);
