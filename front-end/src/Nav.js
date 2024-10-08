@@ -1,15 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './App.css'; // Ensure your custom styles come after Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import './App.css'; 
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
     const auth = localStorage.getItem('user');
+    const navigate = useNavigate();
+    const logout = () => {
+        localStorage.removeItem('user');
+        navigate('/signin');
+    };
+    const parsedname = JSON.parse(auth);
+
+
 
     return (
+        <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a className="navbar-brand" href="/">3DCraftZoneLOGO</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="/LOGO.png" alt="Logo" style={{height:'3rem', mixBlendMode:'color-dodge'}}/>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
@@ -17,24 +27,20 @@ const Nav = () => {
                     <li className="nav-item">
                         <Link className="nav-link" to="/">Product</Link>
                     </li>
+                    {auth ? 
                     <li className="nav-item">
-                        <Link className="nav-link" to="/add">Add Product</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/update">Update Product</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/profile">Profile</Link>
-                    </li>
-                    <li className="nav-item">
+                        <Link className="nav-link" to="/userdata">{parsedname.name} User</Link>
+                    </li> : ''}
+                    <li className="nav-item" id='logout'>
                         {auth ? 
-                            <Link className="nav-link" to="/logout">Logout</Link> : 
+                            <span className="nav-link" onClick={logout} style={{ cursor: 'pointer' }}>Sign Out</span> : 
                             <Link className="nav-link" to="/signup">Sign Up</Link>
                         }
                     </li>
                 </ul>
             </div>
         </nav>
+        </header>
     );
 };
 

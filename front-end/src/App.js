@@ -3,9 +3,12 @@ import './App.css';
 import Nav from './Nav.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import SignUp from './components/Signup.js';
+import SignIn from './components/SignIn.js';
 import PrivateComponent from './components/PrivateComponent.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import SignUp from './components/Signup.js';
+import UserData from './components/UserData.js';
+import Products from './components/Products.js'
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 
@@ -16,13 +19,11 @@ function App() {
                 <Nav />
                 <Routes>
                     <Route element={<PrivateComponent />}>
-                    <Route path="/" element={<h1>Product Component</h1>} />
-                    <Route path="/add" element={<h1>Add Product Component</h1>} />
-                    <Route path="/update" element={<h1>Update Product Component</h1>} />
-                    <Route path="/logout" element={<h1>Logout Product Component</h1>} />
-                    <Route path="/profile" element={<h1>Profile Product Component</h1>} />
+                    <Route path="/" element={<Products />} />
                     </Route>
+                    <Route path="/signin" element={<SignIn />} />   
                     <Route path="/signup" element={<SignUp />} />    
+                    <Route path="/userdata" element={<UserData />} />      
                 </Routes>
             </BrowserRouter>
             <Footer />
